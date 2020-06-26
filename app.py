@@ -33,4 +33,6 @@ def rates(currency):
             'rate': coin_info['market_data']['current_price'][tsym['code'].lower()]
         })
 
+    print('rates', rates, flush=True)
+
     return jsonify(rates)
