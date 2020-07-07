@@ -58,4 +58,8 @@ def historical_rates(currency):
         return jsonify(result)
 
     print('Not found at {}'.format(datetime.datetime.now().timestamp()), flush=True)
-    return make_response(json.dumps({'success': False, 'code': 404, 'msg': 'Not Found'}))
+    result = {
+        'ts': request_ts
+    }
+
+    return jsonify(result)
