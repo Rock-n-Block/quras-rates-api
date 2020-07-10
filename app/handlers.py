@@ -25,7 +25,8 @@ def rates():
 
         return jsonify(rates)
 
-    print('\nNot found at {}'.format(datetime.datetime.now().timestamp()), flush=True)
+    print('\n{}: Not found actual at {}'.format(datetime.datetime.now(), datetime.datetime.now().timestamp()),
+          flush=True)
 
 
 @app.route('/api/v1/historical-rates/<currency>')
@@ -57,7 +58,7 @@ def historical_rates(currency):
 
         return jsonify(result)
 
-    print('Not found at {}'.format(datetime.datetime.now().timestamp()), flush=True)
+    print('{}: Not found historical rates at {}'.format(datetime.datetime.now(), request_ts), flush=True)
     result = {
         'ts': request_ts
     }
